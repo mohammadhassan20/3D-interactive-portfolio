@@ -45,7 +45,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="project-card relative w-full overflow-hidden rounded-[34px] border border-white/20 bg-white/80 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_35px_120px_-45px_rgba(0,0,0,0.5)] dark:border-white/10 dark:bg-black/60">
             <div
               className="relative h-56 w-full overflow-hidden"
-              style={{ backgroundImage: project.gradient ?? "" }}
             >
               <Image
                 className="pointer-events-none h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out group-hover/modal-btn:scale-[1.05]"
@@ -77,22 +76,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
             )}
             <div className="flex flex-col gap-4 bg-white/85 px-8 py-8 text-left backdrop-blur dark:bg-black/70">
               <p className="text-xs font-semibold uppercase tracking-[0.5em] text-neutral-500 dark:text-neutral-400">
-                {project.issueYear ?? project.tagline ?? project.category}
-                {project.issueYear && !project.issueYear?.toString().includes(project.category) && (
-                  <span className="ml-2 font-sans text-[0.8rem] tracking-[0.4em] text-neutral-400">
-                    {project.issueYear}
-                  </span>
-                )}
+                {project.category}
               </p>
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 {project.title}
               </h3>
-              {project.summary && (
-                <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                  {project.summary}
-                </p>
-              )}
-              <p className="text-sm font-semibold" style={{ color: project.accentColor ?? "#2563eb" }}>
+              {/* No summary property on Project type */}
+              <p className="text-sm font-semibold" style={{ color: "#2563eb" }}>
                 {project.category}
               </p>
             </div>
@@ -108,11 +98,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <button className="w-28 rounded-md border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-black dark:border-black dark:bg-black dark:text-white">
               Cancel
             </button>
-            <Link href={project.live} target="_blank">
-              <button className="w-28 rounded-md border border-black bg-black px-2 py-1 text-sm text-white dark:bg-white dark:text-black">
-                Visit
-              </button>
-            </Link>
+            <button className="w-28 rounded-md border border-black bg-black px-2 py-1 text-sm text-white dark:bg-white dark:text-black opacity-50 cursor-not-allowed" disabled>
+              Visit
+            </button>
           </ModalFooter>
         </ModalBody>
       </Modal>

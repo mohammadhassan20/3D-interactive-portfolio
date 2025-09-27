@@ -42,17 +42,10 @@ const BASE_PATH = "/assets/projects-screenshots";
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
-        className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
-        href={live}
-      >
-        <Button variant={"default"} size={"sm"}>
-          Visit Website
-          <ArrowUpRight className="ml-3 w-5 h-5" />
-        </Button>
-      </Link>
+      <Button variant={"default"} size={"sm"} disabled className="opacity-50 cursor-not-allowed">
+        Visit Website
+        <ArrowUpRight className="ml-3 w-5 h-5" />
+      </Button>
       {repo && (
         <Link
           className="font-mono underline flex gap-2"
@@ -963,7 +956,6 @@ const projects: Project[] = [
 
           <SlideShow
             images={this.screenshots}
-            className="mt-8"
           />
 
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -1039,7 +1031,7 @@ const projects: Project[] = [
             <li><strong>Uvicorn</strong>: ASGI server powering the OCR microservice</li>
           </ul>
 
-          <SlideShow images={this.screenshots} className="mt-8" />
+          <SlideShow images={this.screenshots} />
           <ProjectsLinks live={this.live} repo={this.github} />
         </div>
       );
