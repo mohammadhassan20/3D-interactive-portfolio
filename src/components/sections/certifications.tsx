@@ -40,44 +40,55 @@ export type Certification = {
   gradient: string;
   accentColor: string;
   credentialUrl?: string;
+  backgroundSize?: string;
+  backgroundPosition?: string;
+  backgroundRepeat?: string;
+  backgroundColor?: string;
 };
 
 const CERTIFICATIONS: Certification[] = [
   {
-    id: "cloud-innovator",
-    title: "Cloud Innovator Challenge",
-    issuer: "SkyNet Labs",
+    id: "ibm-journey-to-cloud",
+    title: "Journey to Cloud: Envisioning Your Solution",
+    issuer: "IBM SkillsBuild",
     issueYear: "2024",
     description:
-      "Recognized for designing a scalable multi-cloud deployment strategy using IaC, observability, and automated cost optimization pipelines.",
-    gradient:
-      "linear-gradient(135deg, rgba(79,70,229,0.9) 0%, rgba(30,64,175,0.9) 55%, rgba(9,9,55,0.95) 100%)",
-    accentColor: "#818cf8",
-    credentialUrl: "https://example.com/cert/cloud-innovator",
+      "Demonstrates cloud fluency across IaaS, PaaS, and SaaS delivery models while leveraging IBM Garage practices to lead hybrid cloud transformation initiatives.",
+    gradient: "url('/assets/certifications/IBM-Badge.png')",
+    accentColor: "#0f62fe",
+    credentialUrl:
+      "https://www.credly.com/earner/earned/badge/27646974-db71-484e-a13f-f89c14c6b1c4",
   },
   {
-    id: "ml-specialist",
-    title: "Machine Learning Specialist",
-    issuer: "FutureAI Academy",
-    issueYear: "2023",
-    description:
-      "Completed an advanced program covering model deployment, MLOps workflows, and ethical AI practices for real-time analytics applications.",
-    gradient:
-      "linear-gradient(135deg, rgba(244,114,182,0.95) 0%, rgba(236,72,153,0.9) 45%, rgba(88,28,135,0.9) 100%)",
-    accentColor: "#f0abfc",
-    credentialUrl: "https://example.com/cert/ml-specialist",
-  },
-  {
-    id: "devsecops-pro",
-    title: "DevSecOps Professional",
-    issuer: "SecureCloud Institute",
+    id: "aws-cloud-essentials",
+    title: "AWS Knowledge: Cloud Essentials - Training Badge",
+    issuer: "Amazon Web Services Training and Certification",
     issueYear: "2024",
     description:
-      "Built automated security gates for CI/CD pipelines, including container scanning, secrets management, and policy-as-code enforcement.",
-    gradient:
-      "linear-gradient(135deg, rgba(34,197,94,0.95) 0%, rgba(22,163,74,0.9) 55%, rgba(15,118,110,0.9) 100%)",
-    accentColor: "#86efac",
-    credentialUrl: "https://example.com/cert/devsecops-pro",
+      "Earners of this badge have developed knowledge of foundational AWS Cloud concepts with a focus on compute, storage, networking, and database services, along with security, architecture, pricing, and support.",
+    gradient: "url('/assets/certifications/AWS.png')",
+    accentColor: "#FF9900",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundColor: "#0B1F2A",
+    credentialUrl:
+      "https://www.credly.com/earner/earned/badge/c3035809-118f-446f-89f1-1378aea50d6a",
+  },
+  {
+    id: "aws-academy-cloud-foundations",
+    title: "AWS Academy Graduate - Cloud Foundations - Training Badge",
+    issuer: "Amazon Web Services Training and Certification",
+    issueYear: "2024",
+    description: "Earners of this badge have taken the AWS Academy Cloud Foundations course.",
+    gradient: "url('/assets/certifications/AWS.png')",
+    accentColor: "#1A73E8",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundColor: "#0B1F2A",
+    credentialUrl:
+      "https://www.credly.com/earner/earned/badge/cadc229d-fbe9-46cc-9ced-4859f071c196",
   },
 ];
 
@@ -288,11 +299,14 @@ const CertificationCard = ({ certification }: { certification: Certification }) 
           <div className="relative flex h-full flex-col">
             <div
               className="relative h-48 w-full overflow-hidden"
-              style={{ backgroundImage: certification.gradient }}
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.55),transparent_55%)]"></div>
-              <div className="absolute inset-0 bg-black/15 mix-blend-soft-light dark:bg-black/40"></div>
-            </div>
+              style={{
+                backgroundImage: certification.gradient,
+                backgroundSize: certification.backgroundSize ?? "cover",
+                backgroundPosition: certification.backgroundPosition ?? "center top",
+                backgroundRepeat: certification.backgroundRepeat ?? "no-repeat",
+                backgroundColor: certification.backgroundColor,
+              }}
+            ></div>
             <div className="flex flex-1 flex-col gap-3 p-6">
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 dark:text-neutral-400">
                 {certification.issueYear}
@@ -314,11 +328,14 @@ const CertificationCard = ({ certification }: { certification: Certification }) 
             <ModalContent className="gap-6 p-6 md:p-10">
               <div
                 className="relative h-56 w-full overflow-hidden rounded-2xl border border-white/10"
-                style={{ backgroundImage: certification.gradient }}
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.55),transparent_65%)] mix-blend-screen"></div>
-                <div className="absolute inset-0 bg-black/10"></div>
-              </div>
+                style={{
+                  backgroundImage: certification.gradient,
+                  backgroundSize: certification.backgroundSize ?? "cover",
+                  backgroundPosition: certification.backgroundPosition ?? "center top",
+                  backgroundRepeat: certification.backgroundRepeat ?? "no-repeat",
+                  backgroundColor: certification.backgroundColor,
+                }}
+              ></div>
               <div className="flex flex-col gap-3 text-neutral-700 dark:text-neutral-300">
                 <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                   {certification.title}
