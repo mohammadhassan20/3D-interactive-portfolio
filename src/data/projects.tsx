@@ -772,32 +772,65 @@ const projects: Project[] = [
   { // 01. AI Docker file optimizer project
     id: "aidockerfileoptimizer",
     category: "AI and DevOps",
-    title: "AI Dockerfile Optimizer",
-    src: "/assets/projects-screenshots/aidockerfileoptimizer/2.png",
-    screenshots: ["1.png", "2.png", "3.png"],
-    live: "https://ai-docker-file-optimizer.netlify.app/",
-    github:"https://github.com/Abhiz2411/AI-Docker-file-optimizer",
+    title: "BizCard App",
+    src: "/assets/project-prev/BizCard.png",
+    screenshots: [
+      "/assets/project-prev/BizCard.png",
+      "/assets/project-prev/BizCard1.png",
+      "/assets/project-prev/BizCard2.png",
+    ],
+    live: "https://bizcard-one.vercel.app/",
+    github: "https://github.com/mohammadhassan20/BizCard",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.vite],
-      backend: [PROJECT_SKILLS.openai,PROJECT_SKILLS.netlify],
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.vite,
+      ],
+      backend: [PROJECT_SKILLS.node, PROJECT_SKILLS.express, PROJECT_SKILLS.prisma],
     },
     get content() {
       return (
-        <div>
-          <TypographyP className="font-mono ">
-            AI-Docker-file-optimizer helps optimize Dockerfiles for smaller, more efficient images. 
-            Simply paste your Dockerfile, and the app analyzes it for best practices and size 
-            optimization tips. It then provides a refactored, optimized version of the Dockerfile. 
-            Deployed on Vercel, it ensures fast and easy access to Dockerfile optimization.
+        <div className="space-y-6">
+          <TypographyH3 className="font-mono text-center text-2xl">
+            Project Snapshot: BizCard App
+          </TypographyH3>
+          <TypographyP className="font-mono">
+            BizCard App is a full-stack platform for creating, sharing, and monitoring digital business
+            cards. It replaces static paper cards with dynamic online profiles that stay current, are easy
+            to share, and provide basic engagement insights.
+          </TypographyP>
+          <TypographyH3 className="font-mono text-xl">What It Does</TypographyH3>
+          <ul className="list-disc list-inside space-y-2 text-sm">
+            <li>Generates personalized digital business cards with public URLs and scannable QR codes</li>
+            <li>Allows quick updates to contact details without reprints</li>
+            <li>Offers basic analytics on profile views and engagement</li>
+            <li>Supports OCR-based import from physical cards to speed up data entry</li>
+            <li>Delivers SEO-friendly assets (sitemap, robots.txt, structured data) for discoverability</li>
+          </ul>
+          <TypographyH3 className="font-mono text-xl">Highlight Features</TypographyH3>
+          <ul className="list-disc list-inside space-y-2 text-sm">
+            <li>Digital Card Builder with profile, social links, and optional media</li>
+            <li>QR Code generation and in-app scanning via html5-qrcode</li>
+            <li>OCR extraction support for importing text from printed cards</li>
+            <li>View analytics for each card</li>
+            <li>SEO enhancements through standard web assets</li>
+            <li>JWT-secured authentication with protected routes</li>
+            <li>Responsive, mobile-first interface</li>
+          </ul>
+          <TypographyH3 className="font-mono text-xl">Tech Stack</TypographyH3>
+          <TypographyP className="font-mono text-sm">
+            <strong>Frontend:</strong> React (Vite), Tailwind CSS, React Router, Zustand
+            <br />
+            <strong>Backend:</strong> Node.js, Express, Sequelize
+            <br />
+            <strong>Database:</strong> MySQL 8+
+            <br />
+            <strong>Build/Run Scripts:</strong> npm workflows for install, dev servers, builds, and DB initialization
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/aidockerfileoptimizer/1.png`,
-              `${BASE_PATH}/aidockerfileoptimizer/2.png`,
-              `${BASE_PATH}/aidockerfileoptimizer/3.png`,
-            ]}
-          />
+          <SlideShow images={this.screenshots} />
         </div>
       );
     },
@@ -805,270 +838,213 @@ const projects: Project[] = [
   { // 02. FinanceMe project
     id: "financeme",
     category: "DevOps in Banking and Finance",
-    title: "FinanceMe: Complete DevOps Capstone Project",
-    src: "/assets/projects-screenshots/financeme/1.png",
-    screenshots: ["/assets/projects-screenshots/financeme/1.png"],
+    title: "InvoiceWise: Local Invoice Intelligence Platform",
+    src: "/assets/project-prev/invoice1.png",
+    screenshots: [
+      "/assets/project-prev/invoice1.png",
+      "/assets/project-prev/invoice2.png",
+      "/assets/project-prev/invoice3.png",
+      "/assets/project-prev/invoice4.png",
+    ],
     skills: {
       frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.bootstrap,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.tailwind,
       ],
       backend: [
-        PROJECT_SKILLS.java,
-        PROJECT_SKILLS.maven,
-        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.python,
       ],
     },
-    live: "https://github.com/Abhiz2411/FinanceMe-Devops-Project-01",
-    github: "https://github.com/Abhiz2411/FinanceMe-Devops-Project-01",
+    live: "https://invoice-wise-4ac86ae3.base44.app",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            FinanceMe: Complete DevOps Capstone Project
+            InvoiceWise: Build a Local Invoice Data Extraction Web App with Dashboard
           </TypographyP>
-          <TypographyP className="font-mono ">
-            This project demonstrates the deployment of a DevOps pipeline for a global banking and
-            financial services provider, FinanceMe. The company transitioned from a monolithic 
-            architecture to a microservice-based architecture to handle increased traffic and 
-            scaling challenges. The project involves automating infrastructure provisioning, build 
-            and deployment processes, and continuous monitoring using modern DevOps tools and 
-            AWS services.?
+          <TypographyP className="font-mono mb-4">
+            InvoiceWise is a local-first invoice intelligence platform that automates
+            document ingestion, OCR, structured data extraction, and interactive
+            analytics. The app empowers finance teams to process large batches of
+            invoices offline while staying fully in control of their sensitive data.
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Architecture </TypographyH3>
-          <p className="font-mono mb-2">
-            The project is divided into three main phases:
-            1.Automating Infrastructure Provisioning
-            2.Build and Deployment Automation
-            3.Continuous Monitoring
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/financeme/1.png`,
-              `${BASE_PATH}/financeme/2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Automating Infrastructure Provisioning</TypographyH3>
-          <p className="font-mono mb-2">
-          Terraform is used to create 4 AWS EC2 instances:
-            Jenkins Master Node (for CI/CD pipeline management)
-            Build Server (for application and Docker image builds)
-            Production Server (for deploying Dockerized applications)
-            Monitoring Server (for continuous monitoring of Build and Prod servers)
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/financeme/4_A.png`,
-              `${BASE_PATH}/financeme/4.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Build and Deployment Automation</TypographyH3>
 
-          <p className="font-mono mb-2">
-          Jenkins is configured for a CI/CD pipeline:
-            Jenkins Master Node is responsible for pipeline orchestration.
-            Build Server is configured as a Jenkins Slave Node to handle application builds and Docker image creation.
-            Ansible is used for automating deployment to the Prod server, where the application is deployed using an Ansible client-server model.
-          </p>
+          <TypographyH3 className="my-4">Project Goal</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Build a self-hosted web application that accepts PDFs and images,
+            extracts key invoice attributes using open-source AI tooling, persists
+            data in MongoDB, and visualizes everything in a modern React + Vite
+            dashboard.
+          </TypographyP>
+
+          <TypographyH3 className="my-4">Key Features</TypographyH3>
+          <ul className="list-disc list-inside font-mono space-y-2 mb-6">
+            <li>Local-only deployment with secure file storage</li>
+            <li>Batch upload for PDFs and images with drag-and-drop UX</li>
+            <li>PaddleOCR-first pipeline with Tesseract fallback</li>
+            <li>spaCy-powered entity extraction for totals, billing addresses, and item counts</li>
+            <li>MongoDB persistence with raw text, metadata, and file references</li>
+            <li>React dashboard for filtering, editing, and exporting invoice data</li>
+            <li>Visual charts for spend tracking and invoice volume trends</li>
+          </ul>
+
+          <TypographyH3 className="my-4">Detailed Requirements</TypographyH3>
+          <TypographyH3 className="font-mono text-xl mt-6">1. Upload Functionality</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Support PDFs and images (`.jpg`, `.jpeg`, `.png`) with multi-file batches
+            and resilience against skewed or low-quality scans. Provide a polished
+            drag-and-drop upload area with progress feedback.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">2. OCR and Text Extraction</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Convert PDFs to images before processing. Run PaddleOCR by default and
+            fall back to Tesseract when needed. Apply preprocessing steps like
+            deskewing and contrast enhancement for accuracy.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">3. Data Extraction</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Use spaCy (and optionally fine-tuned Hugging Face models) to extract the
+            total amount due, billed-to address, and the total number of line items
+            from the OCR output. Handle variable invoice layouts.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">4. Data Storage</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Store each invoice entry in MongoDB with file metadata, timestamps,
+            extracted text, structured fields, and file paths or GridFS references.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">5. Dashboard (Frontend)</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Deliver a React + Vite interface featuring searchable tables, field
+            editing, CSV/Excel export, and charts (Recharts or Chart.js) for spend
+            analytics and invoice volumes.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">6. Performance</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Target sub-10-second processing per invoice and leverage async queues so
+            users can continue working while OCR completes in the background.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">7. Security & Privacy</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Keep processing local, secure stored assets, and encrypt data in transit
+            between the frontend and backend layers.
+          </TypographyP>
+
+          <TypographyH3 className="font-mono text-xl mt-6">8. Technology Stack</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Backend options include FastAPI (Python) or Express (Node.js) paired with
+            MongoDB. Use PaddleOCR, Tesseract, pdf2image/pdf-lib, spaCy, and optional
+            Hugging Face models for AI tasks.
+          </TypographyP>
+
+          <TypographyH3 className="my-4">Design Language</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Premium, enterprise-grade visuals using deep navy (#1e293b), warm gold
+            (#f59e0b), and soft neutrals. Expect clean typography, card-based layouts,
+            and smooth micro-interactions across dashboard, upload, and invoice pages.
+          </TypographyP>
+
+          <TypographyH3 className="my-4">App Organization</TypographyH3>
+          <TypographyP className="font-mono mb-2">
+            - Dashboard Page: Analytics and recent invoices overview
+            <br />- Upload Page: Advanced ingestion with AI processing controls
+            <br />- Invoices Page: Editable data grid with filters and exports
+          </TypographyP>
+
           <SlideShow
-            images={[
-              `${BASE_PATH}/financeme/5.png`,
-              `${BASE_PATH}/financeme/6.png`,
-              `${BASE_PATH}/financeme/7.png`,
-            ]}
+            images={this.screenshots}
+            className="mt-8"
           />
-          <TypographyH3 className="my-4 mt-8">Continuous Monitoring </TypographyH3>
-          <p className="font-mono mb-2">
-          Prometheus and Grafana are used for real-time monitoring:
-            Node Exporter is installed on both Build and Prod servers to collect server metrics (CPU, Disk Space, Memory Utilization).
-            Grafana Dashboard is created to visualize these metrics for continuous monitoring.
-          </p>
-          <SlideShow images={[
-                `${BASE_PATH}/financeme/3.png`,
-                `${BASE_PATH}/financeme/8.png`,
-                `${BASE_PATH}/financeme/9.png`,
-                `${BASE_PATH}/financeme/10.png`,
-            ]} />
+
+          <ProjectsLinks live={this.live} repo={this.github} />
         </div>
       );
     },
   },
-  { // 03. Portfolio project
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/myportfolio/landing.png",
-    screenshots: ["assets/projects-screenshots/myportfolio/landing.png"],
-    live: "https://www.abhijitzende.com/",
-    github:"https://github.com/Abhiz2411/3D-interactive-portfolio",
+  { // 03. Extractify project
+    id: "extractify",
+    category: "Document AI Platform",
+    title: "Extractify: OCR + AI Document Extraction API",
+    src: "/assets/project-prev/extractify1.png",
+    screenshots: [
+      "/assets/project-prev/extractify1.png",
+      "/assets/project-prev/extractify2.png",
+      "/assets/project-prev/extractify3.png",
+    ],
+    live: "https://github.com/Abhiz2411/Extractify",
     skills: {
       frontend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
         PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
       ],
-      backend: [],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.docker,
+        PROJECT_SKILLS.openai,
+      ],
     },
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+          <TypographyP className="font-mono text-2xl text-center">
+            Extractify: OCR + AI Document Extraction API
           </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/myportfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/myportfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Extractify combines a Node.js/Express core with a Python microservice to
+            deliver structured data from passports, business cards, and license
+            plates. The platform harmonizes OCR pipelines and AI model responses into
+            a single, developer-friendly API layer.
+          </TypographyP>
 
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/myportfolio/projects.png`,
-              `${BASE_PATH}/myportfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
-        </div>
-      );
-    },
-  },
-  { // 04. Smart parking assitant
-    id: "smartparkingassitant",
-    category: "IoT",
-    title: "Smart Parking Assistant",
-    src: "/assets/projects-screenshots/smartparkingassitant/01.jpeg",
-    screenshots: ["01.jpeg", "03.png"],
-    live: "https://github.com/Abhiz2411/smart-parking-assistant",
-    github:"https://github.com/Abhiz2411/smart-parking-assistant",
-    skills: {
-      frontend: [PROJECT_SKILLS.python],
-      backend: [PROJECT_SKILLS.cplusplus, PROJECT_SKILLS.arduino],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Transform parking with the Smart Parking Assistant, an IoT marvel powered by Arduino 
-            and IR sensors to detect and recommend the best spots in real-time. Enjoy a sleek GUI 
-            that visualizes availability and an intelligent system for quick, optimal decisions. 
-            Built to adapt with customizable hardware and Python-powered software for seamless 
-            integration. Say goodbye to parking woes and hello to smarter space utilization!
-          </TypographyP>
+          <TypographyH3 className="my-4">Key Features</TypographyH3>
+          <ul className="list-disc list-inside font-mono space-y-2 mb-6">
+            <li><strong>7 AI models</strong> across OpenAI, Google, Groq, and Together AI providers</li>
+            <li><strong>3 OCR engines</strong> including OCR.space, Tesseract.js, and PaddleOCR</li>
+            <li><strong>3 document templates</strong> with tailored extractors for passports, business cards, and license plates</li>
+            <li><strong>Unified API</strong> that normalizes outputs regardless of the AI service</li>
+            <li><strong>Dedicated Python microservice</strong> exposing PaddleOCR on port 5002</li>
+            <li><strong>Error handling pipeline</strong> with graceful fallbacks and retries</li>
+            <li><strong>File validation</strong> enforcing a 10&nbsp;MB limit and image-only uploads</li>
+            <li><strong>CORS-enabled</strong> endpoints for safe cross-origin integration</li>
+          </ul>
+
+          <TypographyH3 className="my-4">Dependencies</TypographyH3>
+          <TypographyH3 className="font-mono text-xl mt-6">Node.js stack</TypographyH3>
+          <ul className="list-disc list-inside font-mono space-y-1 mb-4">
+            <li><strong>Express.js</strong>: HTTP routing layer</li>
+            <li><strong>Multer</strong>: Multipart uploads and storage</li>
+            <li><strong>Axios</strong>: Upstream AI provider communication</li>
+            <li><strong>CORS</strong>: Cross-origin controls</li>
+            <li><strong>Sharp</strong>: Image preprocessing</li>
+            <li><strong>Tesseract.js</strong>: JavaScript OCR fallback</li>
+            <li><strong>AI SDKs</strong>: OpenAI, Google, Groq, Together AI integrations</li>
+          </ul>
+
+          <TypographyH3 className="font-mono text-xl mt-6">Python stack</TypographyH3>
+          <ul className="list-disc list-inside font-mono space-y-1 mb-6">
+            <li><strong>FastAPI</strong>: Lightweight microservice host</li>
+            <li><strong>PaddleOCR</strong>: High-accuracy OCR pipeline</li>
+            <li><strong>OpenCV</strong>: Advanced image preprocessing utilities</li>
+            <li><strong>Uvicorn</strong>: ASGI server powering the OCR microservice</li>
+          </ul>
+
+          <SlideShow images={this.screenshots} className="mt-8" />
           <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/smartparkingassitant/01.jpeg`,
-              `${BASE_PATH}/smartparkingassitant/03.png`,
-              `${BASE_PATH}/smartparkingassitant/04.jpg`,
-            ]}
-          />
         </div>
       );
     },
   },
-  { // 05. Smart Job Tracker project
-    id: "smartjobtracker",
-    category: "Full stack",
-    title: "Smart Job Tracker",
-    src: "/assets/projects-screenshots/smartjobtracker/02.png",
-    screenshots: ["01.png", "02.png", "03.png","04.png","05.png","06.png","07.png"],
-    live: "https://job-tracker-application-eight.vercel.app/",
-    github:"https://github.com/Abhiz2411/Job-tracker-application",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.vite],
-      backend: [PROJECT_SKILLS.firebase],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Track your job applications effortlessly with a sleek, dark-themed app that lets you 
-            manage, filter, and visualize your job search. Organize your applications with a 
-            Kanban board, monitor progress through status updates, and store everything securely. 
-            Enjoy seamless access across devices with a responsive design and email reminders for 
-            interviews. A smarter, more intuitive way to stay on top of your job hunt!
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/smartjobtracker/01.png`,
-              `${BASE_PATH}/smartjobtracker/02.png`,
-              `${BASE_PATH}/smartjobtracker/03.png`,
-              `${BASE_PATH}/smartjobtracker/04.png`,
-              `${BASE_PATH}/smartjobtracker/05.png`,
-              `${BASE_PATH}/smartjobtracker/06.png`,
-              `${BASE_PATH}/smartjobtracker/07.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  { // 06. Savinder Puri portfolio project
-    id: "savinderpurisportfolio",
-    category: "Web Development",
-    title: "Savinder Puri Portfolio",
-    src: "/assets/projects-screenshots/savinderpuriportfolio/01.png",
-    screenshots: ["01.png", "02.png", "03.png","04.png","05.png"],
-    live: "https://savinder-puri.vercel.app/",
-    github:"https://github.com/Abhiz2411/savinder-puri",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.vite],
-      backend: [],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Step into the digital world of Savinder Puri, the beloved DevOps guru and Spiritual 
-            Alchemist, with this responsive portfolio website. 🌐✨ Explore his inspiring journey, 
-            milestones, and life-changing services blending tech and spirituality. Built with 
-            modern tools like React and TypeScript, it’s a heartfelt tribute to a mentor who 
-            transforms lives. 💻🕊️ Crafted with ❤️ by Abhijit Zende! 🚀
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/savinderpuriportfolio/01.png`,
-              `${BASE_PATH}/savinderpuriportfolio/02.png`,
-              `${BASE_PATH}/savinderpuriportfolio/03.png`,
-              `${BASE_PATH}/savinderpuriportfolio/04.png`,
-              `${BASE_PATH}/savinderpuriportfolio/05.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
+
 ];
 export default projects;

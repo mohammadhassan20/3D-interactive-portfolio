@@ -25,7 +25,7 @@ const HeroSection = () => {
             "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pt-0 sm:pb-32 md:p-24 lg:p-40 xl:p-48"
+            "pt-24 sm:pt-24 md:pt-28 sm:pb-32 px-6 sm:px-10 md:px-16 lg:pl-20 lg:pr-8 xl:pl-24 xl:pr-10"
           )}
         >
           {!isLoading && (
@@ -64,7 +64,7 @@ const HeroSection = () => {
                       side="top"
                       className="dark:bg-white dark:text-black"
                     >
-                      theres something waiting for you in devtools
+                      theres something waiting for you in devtoolssss
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
@@ -83,7 +83,7 @@ const HeroSection = () => {
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1vjtWfqYGMIMK_rlBnmDEpKco9MiEaQss/view"
+                    "https://drive.google.com/file/d/12n2km0k595il1fltpEAJ7yD56eFlhlRo/view?usp=sharing"
                   }
                   target="_blank"
                   className="flex-1"

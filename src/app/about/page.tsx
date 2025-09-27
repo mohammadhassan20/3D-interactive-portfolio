@@ -287,8 +287,8 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Abhijit, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and 
-              Database management with hands-on experience in deploying & automating workflows, and 
+              Hey there! I'm Mohammad, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and
+              Database management with hands-on experience in deploying & automating workflows, and
               collaborating with foreign clients. Strong analytical skills,effective communication,
               and a team-oriented approach to driving process improvements and delivering results.
             </p>
