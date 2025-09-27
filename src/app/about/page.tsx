@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { DiMongodb, DiNginx, DiNpm, DiPostgresql, DiVim } from "react-icons/di";
 import {
   FaAws,
@@ -244,10 +245,12 @@ function Page() {
           >
             <div className="flex flex-row lg:flex-col items-center">
               <div className="flex justify-center items-center lg:w-full lg:aspect-square bg-zinc-800 rounded-xl lg:mb-5">
-                <img
+                <Image
                   className="rounded-full p-4 lg:p-10 w-[100px] md:w-[150px] lg:w-[200px] aspect-square  bg-zinc-800"
                   alt="me"
                   src="/assets/me.jpg"
+                  width={200}
+                  height={200}
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
@@ -287,7 +290,7 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I'm Mohammad, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and
+              Hey there! I&apos;m Mohammad, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and
               Database management with hands-on experience in deploying & automating workflows, and
               collaborating with foreign clients. Strong analytical skills,effective communication,
               and a team-oriented approach to driving process improvements and delivering results.
@@ -309,7 +312,6 @@ function Page() {
                     autoplay: true,
                     pagination: false,
                     speed: 2000,
-                    perPage: 5,
                     perMove: 1,
                     rewind: true,
                     easing: "cubic-bezier(0.25, 1, 0.5, 1)",

@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -77,7 +78,7 @@ const AnimatedDiv = ({
       y: randY,
       transition: { duration: 5, ease: "linear" },
     });
-  }, [controls]);
+  }, [controls, randY]);
 
   const handlePause = () => {
     onClick();
@@ -91,10 +92,12 @@ const AnimatedDiv = ({
       onAnimationComplete={onCompleted}
       onClick={handlePause}
     >
-      <img
+      <Image
         src="/assets/nyan-cat.gif"
         className={cn("fixed z-10 h-40 w-auto")}
         alt="Nyan Cat"
+        width={160}
+        height={40}
       />
     </motion.div>
   );
