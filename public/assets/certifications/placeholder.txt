@@ -1,0 +1,2 @@
+Public placeholder files for certification card previews.
+Replace each PNG with the actual certificate artwork when ready.
