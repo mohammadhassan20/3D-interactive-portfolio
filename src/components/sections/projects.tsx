@@ -29,37 +29,72 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3">
-        {projects.map((project, index) => (
-          <Modall key={project.src} project={project} />
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard key={project.src} project={project} />
         ))}
       </div>
     </section>
   );
 };
-const Modall = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
-          <div
-            className="relative w-[400px] h-auto rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3/2" }}
-          >
-            <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
-              src={project.src}
-              alt={project.title}
-              width={300}
-              height={300}
-            />
-            <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
-              <div className="flex flex-col h-full items-start justify-end p-6">
-                <div className="text-lg text-left">{project.title}</div>
-                <div className="text-xs bg-white text-black rounded-lg w-fit px-2">
-                  {project.category}
-                </div>
+        <ModalTrigger className="group/modal-btn flex w-full max-w-[420px] justify-center bg-transparent">
+          <div className="project-card relative w-full overflow-hidden rounded-[34px] border border-white/20 bg-white/80 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_35px_120px_-45px_rgba(0,0,0,0.5)] dark:border-white/10 dark:bg-black/60">
+            <div
+              className="relative h-56 w-full overflow-hidden"
+              style={{ backgroundImage: project.gradient ?? "" }}
+            >
+              <Image
+                className="pointer-events-none h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out group-hover/modal-btn:scale-[1.05]"
+                src={project.src}
+                alt={project.title}
+                width={640}
+                height={400}
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.35),transparent_55%)]" />
+              <div className="absolute inset-0 bg-black/15 mix-blend-soft-light dark:bg-black/40" />
+            </div>
+            {(project.skills.frontend?.length || project.skills.backend?.length) && (
+              <div className="flex flex-col gap-4 px-8 pt-6 pb-2 bg-transparent">
+                {project.skills.frontend?.length ? (
+                  <FloatingDock
+                    items={project.skills.frontend}
+                    desktopClassName="bg-white/80 dark:bg-black/60"
+                    showHint={false}
+                  />
+                ) : null}
+                {project.skills.backend?.length ? (
+                  <FloatingDock
+                    items={project.skills.backend}
+                    desktopClassName="bg-white/80 dark:bg-black/60"
+                    showHint={false}
+                  />
+                ) : null}
               </div>
+            )}
+            <div className="flex flex-col gap-4 bg-white/85 px-8 py-8 text-left backdrop-blur dark:bg-black/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.5em] text-neutral-500 dark:text-neutral-400">
+                {project.issueYear ?? project.tagline ?? project.category}
+                {project.issueYear && !project.issueYear?.toString().includes(project.category) && (
+                  <span className="ml-2 font-sans text-[0.8rem] tracking-[0.4em] text-neutral-400">
+                    {project.issueYear}
+                  </span>
+                )}
+              </p>
+              <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
+                {project.title}
+              </h3>
+              {project.summary && (
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                  {project.summary}
+                </p>
+              )}
+              <p className="text-sm font-semibold" style={{ color: project.accentColor ?? "#2563eb" }}>
+                {project.category}
+              </p>
             </div>
           </div>
         </ModalTrigger>
@@ -70,11 +105,11 @@ const Modall = ({ project }: { project: Project }) => {
             </ModalContent>
           </SmoothScroll>
           <ModalFooter className="gap-4">
-            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+            <button className="w-28 rounded-md border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-black dark:border-black dark:bg-black dark:text-white">
               Cancel
             </button>
             <Link href={project.live} target="_blank">
-              <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+              <button className="w-28 rounded-md border border-black bg-black px-2 py-1 text-sm text-white dark:bg-white dark:text-black">
                 Visit
               </button>
             </Link>

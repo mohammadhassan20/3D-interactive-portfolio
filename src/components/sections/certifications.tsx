@@ -12,6 +12,24 @@ import {
 } from "../ui/animated-modal";
 import SmoothScroll from "../smooth-scroll";
 import { cn } from "@/lib/utils";
+import { type IconType } from "react-icons";
+import {
+  SiCss3,
+  SiExpress,
+  SiHtml5,
+  SiJavascript,
+  SiJsonwebtokens,
+  SiMysql,
+  SiNodedotjs,
+  SiNpm,
+  SiPrisma,
+  SiReact,
+  SiReactrouter,
+  SiSequelize,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 
 export type Certification = {
   id: string;
@@ -63,36 +81,101 @@ const CERTIFICATIONS: Certification[] = [
   },
 ];
 
-const MARQUEE_ITEMS = [
+const MARQUEE_ITEMS: {
+  id: string;
+  label: string;
+  accentColor: string;
+  icon: IconType;
+}[] = [
   {
-    id: "marquee-cloud-strategy",
-    label: "Scalable Multi-Cloud Strategies",
-    accentColor: "#818cf8",
+    id: "marquee-react",
+    label: "React",
+    accentColor: "#61dafb",
+    icon: SiReact,
   },
   {
-    id: "marquee-iac",
-    label: "Infrastructure as Code Automation",
-    accentColor: "#818cf8",
+    id: "marquee-tailwind",
+    label: "Tailwind CSS",
+    accentColor: "#38bdf8",
+    icon: SiTailwindcss,
   },
   {
-    id: "marquee-mlops",
-    label: "MLOps Pipelines & Observability",
-    accentColor: "#f0abfc",
+    id: "marquee-typescript",
+    label: "TypeScript",
+    accentColor: "#3178c6",
+    icon: SiTypescript,
   },
   {
-    id: "marquee-ethical-ai",
-    label: "Responsible & Ethical AI Practices",
-    accentColor: "#f0abfc",
+    id: "marquee-vite",
+    label: "Vite",
+    accentColor: "#646cff",
+    icon: SiVite,
   },
   {
-    id: "marquee-devsecops",
-    label: "DevSecOps Security Enforcement",
-    accentColor: "#86efac",
+    id: "marquee-javascript",
+    label: "JavaScript",
+    accentColor: "#f7df1e",
+    icon: SiJavascript,
   },
   {
-    id: "marquee-cloud-governance",
-    label: "Cloud Governance & Compliance",
-    accentColor: "#86efac",
+    id: "marquee-react-router",
+    label: "React Router",
+    accentColor: "#f44250",
+    icon: SiReactrouter,
+  },
+  {
+    id: "marquee-html",
+    label: "HTML5",
+    accentColor: "#e34f26",
+    icon: SiHtml5,
+  },
+  {
+    id: "marquee-css",
+    label: "CSS3",
+    accentColor: "#1572b6",
+    icon: SiCss3,
+  },
+  {
+    id: "marquee-node",
+    label: "Node.js",
+    accentColor: "#68a063",
+    icon: SiNodedotjs,
+  },
+  {
+    id: "marquee-express",
+    label: "Express.js",
+    accentColor: "#2c2c2c",
+    icon: SiExpress,
+  },
+  {
+    id: "marquee-prisma",
+    label: "Prisma",
+    accentColor: "#0c344b",
+    icon: SiPrisma,
+  },
+  {
+    id: "marquee-sequelize",
+    label: "Sequelize",
+    accentColor: "#3a76f0",
+    icon: SiSequelize,
+  },
+  {
+    id: "marquee-mysql",
+    label: "MySQL",
+    accentColor: "#00618a",
+    icon: SiMysql,
+  },
+  {
+    id: "marquee-jwt",
+    label: "JWT Auth",
+    accentColor: "#8723d4",
+    icon: SiJsonwebtokens,
+  },
+  {
+    id: "marquee-npm",
+    label: "npm Scripts",
+    accentColor: "#cb3837",
+    icon: SiNpm,
   },
 ];
 
@@ -130,14 +213,17 @@ const CertificationsSection = () => {
 const MarqueeRow = ({ items }: { items: typeof MARQUEE_ITEMS }) => {
   return (
     <div className="relative flex gap-8">
-      <div className="marquee-track flex items-center gap-6" style={{ animationDuration: "24s" }}>
+      <div
+        className="marquee-track flex items-center gap-10 px-8"
+        style={{ animationDuration: "28s" }}
+      >
         {items.map((item) => (
           <MarqueePill key={item.id} item={item} />
         ))}
       </div>
       <div
-        className="marquee-track flex items-center gap-6"
-        style={{ animationDuration: "24s", animationDelay: "-12s" }}
+        className="marquee-track flex items-center gap-10 px-8"
+        style={{ animationDuration: "28s", animationDelay: "-14s" }}
         aria-hidden
       >
         {items.map((item) => (
@@ -180,14 +266,16 @@ const MarqueePill = ({
     id: string;
     label: string;
     accentColor: string;
+    icon: IconType;
   };
 }) => {
+  const Icon = item.icon;
   return (
-    <div className="flex shrink-0 items-center gap-3 rounded-full border border-white/30 bg-white/60 px-6 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-800 backdrop-blur-sm dark:border-white/10 dark:bg-white/10 dark:text-neutral-200">
-      <span className="text-xl" style={{ color: item.accentColor }}>
-        •
+    <div className="flex shrink-0 items-center gap-3 rounded-full border border-white/30 bg-white/60 px-6 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-800 backdrop-blur-sm transition-colors duration-300 dark:border-white/10 dark:bg-white/10 dark:text-neutral-200">
+      <span className="text-2xl" style={{ color: item.accentColor }}>
+        <Icon aria-hidden />
       </span>
-      <span>{item.label}</span>
+      <span className="tracking-[0.18em]">{item.label}</span>
     </div>
   );
 };

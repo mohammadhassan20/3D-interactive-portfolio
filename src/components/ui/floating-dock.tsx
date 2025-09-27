@@ -23,14 +23,20 @@ export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
+  showHint: showHintProp,
 }: {
   items: { title: string; icon: React.ReactNode }[];
   desktopClassName?: string;
   mobileClassName?: string;
+  showHint?: boolean;
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
+      <FloatingDockDesktop
+        items={items}
+        className={desktopClassName}
+        showHint={showHintProp}
+      />
       {/* <FloatingDockMobile items={items} className={mobileClassName} /> */}
     </>
   );
@@ -93,15 +99,25 @@ const FloatingDockMobile = ({
 const FloatingDockDesktop = ({
   items,
   className,
+  showHint: showHintProp = true,
 }: {
   items: { title: string; icon: React.ReactNode }[];
   className?: string;
+  showHint?: boolean;
 }) => {
   let mouseX = useMotionValue(Infinity);
-  const [showHint, setShowHint] = useState(true);
-  const timer = useRef<NodeJS.Timeout>();
+  const [showHint, setShowHint] = useState(showHintProp);
+
   const controls = useAnimation();
   useEffect(() => {
+    if (!showHintProp) {
+      if (showHint) {
+        setShowHint(false);
+      }
+      controls.stop();
+      return;
+    }
+
     if (showHint) {
       controls.start({
         opacity: [0, 1, 1, 0],
@@ -120,9 +136,8 @@ const FloatingDockDesktop = ({
     }
     return () => {
       controls.stop();
-      clearInterval(timer.current);
     };
-  }, [showHint]);
+  }, [showHint, showHintProp, controls]);
   return (
     <div className="relative h-fit flex items-center justify-center">
       <motion.div
