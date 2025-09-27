@@ -68,7 +68,8 @@ export const ModalBody = ({
   children: ReactNode;
   className?: string;
 }) => {
-  const { open } = useModal();
+  const modalRef = useRef(null);
+  const { open, setOpen } = useModal();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -76,7 +77,7 @@ export const ModalBody = ({
         if (e.key === "Escape") setOpen(false);
       });
     }
-  }, []);
+  }, [setOpen]);
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -85,8 +86,6 @@ export const ModalBody = ({
     }
   }, [open]);
 
-  const modalRef = useRef(null);
-  const { setOpen } = useModal();
   useOutsideClick(modalRef, () => setOpen(false));
 
   return (
